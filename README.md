@@ -8,3 +8,6 @@ The code is dependent on PyPortfolioOpt, please check the following page for ins
 
 https://github.com/robertmartin8/PyPortfolioOpt
 
+To run it in Google Colab:
+https://colab.research.google.com/github/cartasuzuki/dsim/blob/master/PortfolioOptimizer.ipynb
+
