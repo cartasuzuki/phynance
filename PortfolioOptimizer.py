@@ -39,11 +39,11 @@ class PortfolioOptimizer:
         stocks.dropna(inplace = True)
         return(stocks)
     
-    def optimize_portfolio(stocks, min_allocation):
+    def optimize_portfolio(stocks, min_allocation, max_allocation=1):
         exp_ret = -expected_returns.mean_historical_return(stocks)
         S = risk_models.sample_cov(stocks)
     
-        ef = EfficientFrontier(exp_ret, S, gamma = 1, weight_bounds = (min_allocation,1))
+        ef = EfficientFrontier(exp_ret, S, gamma = 1, weight_bounds = (min_allocation,max_allocation))
         weights = ef.max_sharpe()
         ret, vol, sharpe = ef.portfolio_performance(verbose=False)
         return(weights, sharpe, ret)
@@ -69,4 +69,10 @@ class PortfolioOptimizer:
     
         weightArray = np.array(weightList)
         plt.pie(x = weightArray, labels = symbolList)
+        
+    def expected_returns_and_cov(stocks):
+        exp_ret = -expected_returns.mean_historical_return(stocks)
+        S = risk_models.sample_cov(stocks)
+        print("Cov: " + str(round(S,2)) )
+        print("Exp. Return: " + str(round(exp_ret*100,2)) )
             
