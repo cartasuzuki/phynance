@@ -21,4 +21,10 @@ To run it in Google Colab
 
 https://colab.research.google.com/github/cartasuzuki/phynance/blob/master/NikkeiHighDiv50_analysis.ipynb
 
+The result is a Portfolio where however one particular sector (Trading Companies) are over represented. In order to improve sector differentiation we therefore want to drop some stocks and redo the calculation.
 
+https://colab.research.google.com/github/cartasuzuki/phynance/blob/master/NikkeiHighDiv50_analysis_drop_some.ipynb
+
+Another type of assets that helps creating a recurring income is REIT. In the following study we try to selcect a REIT portfolio which maximize Sharpe ration.
+
+https://colab.research.google.com/github/cartasuzuki/phynance/blob/master/JREIT_analysis.ipynb
