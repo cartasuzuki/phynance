@@ -43,7 +43,7 @@ class PortfolioOptimizer:
         exp_ret = -expected_returns.mean_historical_return(stocks)
         S = risk_models.sample_cov(stocks)
     
-        ef = EfficientFrontier(exp_ret, S, gamma = 1, weight_bounds = (min_allocation,max_allocation))
+        ef = EfficientFrontier(exp_ret, S, weight_bounds = (min_allocation,max_allocation))
         weights = ef.max_sharpe()
         ret, vol, sharpe = ef.portfolio_performance(verbose=False)
         return(weights, sharpe, ret)
